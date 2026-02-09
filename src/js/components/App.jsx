@@ -1,12 +1,23 @@
+// ❌ ANTI-PATRÓN CRÍTICO: Uso de hooks no permitido en este ejercicio
+// Este ejercicio específicamente NO debe usar useState ni useEffect
+// El objetivo pedagógico es experimentar las limitaciones del enfoque manual
 import React, { useState, useEffect } from "react";
 import SecondsCounter from "./SecondsCounter.jsx";
 
+// ⚠️ PROBLEMA PEDAGÓGICO: Este componente NO debería usar hooks
+// Ver REVIEW.md para el enfoque correcto sin hooks
 const App = () => {
+    // ❌ Estos hooks NO deberían estar aquí según el objetivo del ejercicio
     const [seconds, setSeconds] = useState(0);
     const [running, setRunning] = useState(false);
     const [target, setTarget] = useState(null);
     const [countdownMode, setCountdownMode] = useState(false);
 
+    // ✅ PATRÓN POSITIVO: Excelente implementación de useEffect
+    // - Cleanup correcto con clearInterval (evita memory leaks)
+    // - Dependencias apropiadas [running, countdownMode]
+    // - Uso de prev => para evitar stale closures
+    // PERO: Este ejercicio NO debe usar useEffect (objetivo pedagógico)
     useEffect(() => {
         let interval = null;
         if (running) {
@@ -21,6 +32,7 @@ const App = () => {
                 });
             }, 1000);
         }
+        // ✅ EXCELENTE: Cleanup que evita memory leak
         return () => clearInterval(interval);
     }, [running, countdownMode]);
 
