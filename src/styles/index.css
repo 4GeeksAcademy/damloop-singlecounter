@@ -1,69 +1,82 @@
 body {
-    background: #f2f2f2;
-    font-family: "Segoe UI", sans-serif;
+    background: #0d1117;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    font-family: "Segoe UI", sans-serif;
 }
 
-.app-container {
-    text-align: center;
-}
-
-.counter-box {
+.bigCounter {
     display: flex;
-    justify-content: center;
+    align-items: center;
     gap: 15px;
-    margin-bottom: 30px;
+    background: #161b22;
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.4);
+}
+
+.clock {
+    font-size: 60px;
+    color: #58a6ff;
 }
 
 .digit {
-    background: white;
-    width: 80px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 48px;
-    font-weight: bold;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.clock-icon {
-    font-size: 40px;
-    color: #ff9800;
-    margin-bottom: 20px;
+    background: #21262d;
+    padding: 20px 25px;
+    border-radius: 10px;
+    font-size: 60px;
+    color: #c9d1d9;
+    min-width: 60px;
+    text-align: center;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.4);
 }
 
 .controls {
+    margin-top: 25px;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 12px;
 }
 
-button {
-    padding: 12px 22px;
+.controls button {
+    padding: 12px;
+    font-size: 16px;
     border: none;
     border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    background: #1976d2;
+    background: #238636;
     color: white;
+    cursor: pointer;
     transition: 0.2s;
 }
 
-button:hover {
-    background: #0d47a1;
+.controls button:hover {
+    background: #2ea043;
 }
 
-button.start {
-    background: #43a047;
+.controls input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+    background: #0d1117;
+    color: #c9d1d9;
+    font-size: 16px;
 }
 
-button.start:hover {
-    background: #2e7d32;
+.controls button:nth-child(1) {
+    background: #da3633;
+}
+
+.controls button:nth-child(1):hover {
+    background: #f85149;
+}
+
+.controls button:nth-child(2) {
+    background: #0969da;
+}
+
+.controls button:nth-child(2):hover {
+    background: #1f6feb;
 }
