@@ -2,7 +2,15 @@ import React from "react";
 import { FaClock } from "react-icons/fa";
 
 const SecondsCounter = ({ seconds }) => {
-    const formatted = String(seconds).padStart(4, "0");
+    const formatted = String(seconds).padStart(6, "0");
+    const positionKeys = [
+        "hundred-thousands",
+        "ten-thousands",
+        "thousands",
+        "hundreds",
+        "tens",
+        "ones"
+    ];
 
     return (
         <div>
@@ -11,8 +19,8 @@ const SecondsCounter = ({ seconds }) => {
             </div>
 
             <div className="counter-box">
-                {formatted.split("").map((digit, i) => (
-                    <div key={i} className="digit">{digit}</div>
+                {positionKeys.map((position, index) => (
+                    <div key={position} className="digit">{formatted[index]}</div>
                 ))}
             </div>
         </div>
