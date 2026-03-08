@@ -1,7 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
+import { FaRegClock } from "react-icons/fa";
+
+const COUNTER_DIGITS = 6;
 
 function SecondsCounter({ seconds }) {
-    const formatted = String(seconds).padStart(6, "0");
+    const formatted = String(seconds).padStart(COUNTER_DIGITS, "0");
 
     const positionKeys = [
         "hundred-thousands",
@@ -15,7 +19,7 @@ function SecondsCounter({ seconds }) {
     return (
         <div className="bigCounter">
             <div className="clock">
-                <i className="fa-regular fa-clock"></i>
+                <FaRegClock aria-hidden="true" />
             </div>
 
             {positionKeys.map((key, index) => (
@@ -26,5 +30,9 @@ function SecondsCounter({ seconds }) {
         </div>
     );
 }
+
+SecondsCounter.propTypes = {
+    seconds: PropTypes.number.isRequired
+};
 
 export default SecondsCounter;

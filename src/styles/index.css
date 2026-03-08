@@ -28,7 +28,7 @@ body {
 }
 
 /* Icono del reloj */
-.clock i {
+.clock svg {
     font-size: 40px;
     color: #00d4ff;
 }
@@ -73,6 +73,12 @@ body {
     transform: scale(1.05);
 }
 
+.controls button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
 /* Inputs */
 .controls input {
     padding: 10px;
@@ -82,4 +88,12 @@ body {
     outline: none;
     text-align: center;
     font-size: 16px;
+}
+
+.status-text {
+    margin-top: 18px;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.8;
 }
